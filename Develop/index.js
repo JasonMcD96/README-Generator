@@ -1,4 +1,12 @@
 const inquirer = require('inquirer');
+const generateMarkdown = require('./utils/generateMarkdown');
+
+// Todo
+// Table of contents in MD
+// links in table of contents
+// enter github
+// enter email
+// Questions section. Link to github. Email 'If you have questions, email me at....'
 
 // array of questions for user
 const questions = [
@@ -13,6 +21,7 @@ const questions = [
 
 // function to write README file
 function writeToFile(fileName, data) {
+    console.log('Time to write the file')
 }
 
 // function to initialize program
@@ -22,14 +31,13 @@ function init() {
         { type: questions[1][0], message: questions[1][1], name: questions[1][2] }, //description
         { type: questions[2][0], message: questions[2][1], name: questions[2][2] }, //installation
         { type: questions[3][0], message: questions[3][1], name: questions[3][2] }, //run
-
         { type: questions[4][0], message: questions[4][1], name: questions[4][2], choices: ['hello', 'world']}, // license
-
         { type: questions[5][0], message: questions[5][1], name: questions[5][2] }, // guidelines
         { type: questions[6][0], message: questions[6][1], name: questions[6][2] }, // test
 
     ]).then((response) => {
-        console.log(response)
+        let mdText = generateMarkdown(response)
+        writeToFile('./output/README.txt', mdText);
     });
 
 }
