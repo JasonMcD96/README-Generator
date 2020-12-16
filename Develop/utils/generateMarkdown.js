@@ -6,8 +6,8 @@ function generateMarkdown(data) {
   1. [Description](#description)
   2. [License](#license)
   3. [Installation](#installation)
-  4. [Running the Program](#running-the-program)
-  5. [Contribution Guidelines](#contribution-guidelines)
+  4. [Usage](#usage)
+  5. [Contributing](#contributing)
   6. [Testing Process](#testing-process)
   7. [Questions](#questions)
   
@@ -25,13 +25,13 @@ function generateMarkdown(data) {
   \`\`\`
   ${data.install}
   \`\`\`
-  ## Running the Program
+  ## Usage
   To run the program, use the command:
   \`\`\`
   ${data.run}
   \`\`\`
   
-  ## Contribution Guidelines
+  ## Contributing
   ${data.guide}
   
   ## Testing Process
